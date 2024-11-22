@@ -1,3 +1,3 @@
-<img src="https://tahazare.ir/FlaskTodo.png" style="border-radius: 1rem;margin: 10px;padding: 1px;align-items: center">
+<img src="https://tahazare.ir/FlaskTodo.png" style="border-radius: 1rem !important">
 
 # Simple CRUD Todo Web App With Flask 🐍
