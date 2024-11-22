@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Task | Todo
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-center">Task | Todo</h1>
+    <div class="p-3 m-3" style="border: 1px solid red;border-radius: 1rem">
+        <form action="/" method="post">
+            <div class="d-flex justify-content-between">
+                <input type="text" placeholder="content . . ." class="form-control border mx-1" name="content"
+                       id="content"/>
+                <button type="submit" class="btn btn-block btn-rounded btn-success mx-1">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <div class="text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <th scope="row">{{ task.id }}</th>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.created_at }}</td>
+                    <td>
+                        <a href="update/{{ task.id }}">Edit</a>
+                        <a href="delete/{{ task.id }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
